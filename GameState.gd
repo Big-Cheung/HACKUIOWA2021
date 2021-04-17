@@ -21,3 +21,8 @@ func _process(delta):
 		add_child(newMeteor)
 		delay = 0
 	delay += delta
+	
+	if Input.is_action_pressed("down"):
+		$Player.position.y += 50*delta
+	elif Input.is_action_pressed("up"):
+		$Player.position.y -= 50*delta
