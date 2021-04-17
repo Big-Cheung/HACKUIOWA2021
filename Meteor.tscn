@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/Meteor.png" type="Texture" id=1]
+[ext_resource path="res://Meteor.gd" type="Script" id=2]
+
+[node name="Meteor" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.137119, 0.155008 )
+texture = ExtResource( 1 )

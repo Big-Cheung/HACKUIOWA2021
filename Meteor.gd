@@ -1,0 +1,24 @@
+extends Node2D
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+var speed = 300
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	rand_seed(OS.get_unix_time())
+	position.y = rand_range(100,500)
+	position.x = 1075
+	print("Hello from :")
+	print(position.y)
+	print("over")
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	position.x = position.x - delta*speed
+	print(position.x)
+	if position.x < -50:
+		queue_free()
