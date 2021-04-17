@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Hackuiowa 2021"
+run/main_scene="res://GameState.tscn"
 config/icon="res://icon.png"
 
 [rendering]
