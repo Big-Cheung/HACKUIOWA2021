@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/RockParticles.tres" type="Material" id=1]
+[ext_resource path="res://assets/Meteor2.png" type="Texture" id=2]
+[ext_resource path="res://RockParticles.gd" type="Script" id=3]
+
+[node name="RockParticles" type="Node2D"]
+
+[node name="Particles" type="Particles2D" parent="."]
+emitting = false
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+visibility_rect = Rect2( 0, 0, 0, 0 )
+local_coords = false
+process_material = ExtResource( 1 )
+texture = ExtResource( 2 )
+script = ExtResource( 3 )

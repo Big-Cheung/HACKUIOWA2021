@@ -1,0 +1,15 @@
+[gd_resource type="ParticlesMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://assets/FadeGradient.tres" type="Texture" id=1]
+
+[resource]
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.03
+scale_random = 0.03
+color_ramp = ExtResource( 1 )
