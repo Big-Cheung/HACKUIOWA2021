@@ -12,20 +12,24 @@ var meteor = load("res://Meteor.tscn")
 var rockparticles = load("res://RockParticles.tscn")
 var delay = 1000
 var extending = false
+var isRunning = true
 
 func _ready():
 	randomize()
 	$Player/Area2D.connect("area_shape_entered",self,"collide")
+	$GUI.connect("upgradeClicked",self,"openUpgrades")
+	$Upgrades.connect("closed",self,"closeUpgrades")
 	rand_seed(OS.get_unix_time())
 
 
 
 func _process(delta):
-	if Globals.currentFuel <= 0:
-		print("L")
+	if not isRunning:
 		return
 	if delay >= 1:
 		Globals.currentFuel -= 1
+		if Globals.currentFuel <= 0:
+			loseGame()
 		var newMeteor = meteor.instance()
 		add_child(newMeteor)
 		delay = 0
@@ -37,26 +41,46 @@ func _process(delta):
 		$Player.position.y -= speed*delta
 
 func _input(event):
+	if not isRunning:
+		return
 	if event.is_action("fire"):
-		$Player/Animator.play("Chain",-1,1)
+		$Player/Animator.play("Chain",-1,1 + (Globals.grabLevel / 5))
 		extending = true
+		Globals.currentFuel -= 1
 		yield(get_node("Player/Animator"),"animation_finished")
 		extending = false
 		
 func collide(areaID,obj,area_shape,self_shape):
+	if not isRunning:
+		return
 	if obj.get_parent().getName() == "Meteor":
 		if self_shape == 1:
 			Globals.rocks += (randi()%5 + 5)
-			Globals.currentFuel = max(Globals.currentFuel +(randi()%5 + 5), 100)
+			Globals.currentFuel = min(Globals.currentFuel +(randi()%5 + 5), 100)
 			obj.get_parent().queue_free()
-			print("Added fuel and rocks")
 			$Player/Animator.advance(max(0,2*(0.5-$Player/Animator.current_animation_position)))
 		else:
-			print("Hit!")
+			Globals.currentHealth -= 1
+			if Globals.currentHealth <= 0:
+				loseGame()
 			obj.get_parent().queue_free()
 		var particle = rockparticles.instance()
 		add_child(particle)
 		particle.position = obj.get_parent().position
 
+func running():
+	return isRunning
+
+func openUpgrades():
+	isRunning = false
+	$Upgrades.visible = true
+	$Upgrades.setDefaults()
+	$Upgrades.updateDisplay()
+
+func closeUpgrades():
+	isRunning = true
+	$Upgrades.visible = false
+
+
 func loseGame():
-	pass
+	isRunning = false
