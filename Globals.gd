@@ -3,7 +3,7 @@ extends Node
 var points = 0
 var multiplier = 1
 
-var rocks = 500
+var rocks = 0
 
 var currentFuel = 100
 var maxFuel = 100
@@ -22,6 +22,21 @@ var healthLevelCosts = [20, 40, 60, 80, 100, "max"]
 var grabSpeed = 1
 var grabLevel = 0
 var grabLevelCosts = [20, 40, 60, 80, 100, "max"]
+
+func resetGlobalValues():
+	points = 0
+	multiplier = 1
+	rocks = 0
+	currentFuel = 100
+	maxFuel = 100
+	fuelLevel = 0
+	shipSpeed = 100
+	speedLevel = 0
+	currentHealth = 5
+	maxHealth = 5
+	healthLevel = 0
+	grabSpeed = 1
+	grabLevel = 0
 
 # Declare member variables here. Examples:
 # var a = 2

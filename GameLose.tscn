@@ -1,0 +1,93 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/nasalization-rg.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/skybox.png" type="Texture" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0.223529, 0.0588235, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 1 )
+
+[node name="EndGamePage" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="skybox" type="Sprite" parent="."]
+position = Vector2( 511.255, 377.984 )
+texture = ExtResource( 2 )
+
+[node name="You" type="Label" parent="."]
+anchor_left = 0.15
+anchor_top = 0.15
+anchor_right = 0.5
+anchor_bottom = 0.4
+margin_bottom = 3.0
+custom_fonts/font = SubResource( 1 )
+text = "YOU"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Win-Lose" type="Label" parent="."]
+anchor_left = 0.15
+anchor_top = 0.4
+anchor_right = 0.5
+anchor_bottom = 0.65
+margin_top = 0.278671
+margin_bottom = 3.27869
+custom_fonts/font = SubResource( 1 )
+text = "LOSE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Win-message" type="Label" parent="."]
+anchor_left = 0.159
+anchor_top = 0.713
+anchor_right = 0.877
+anchor_bottom = 0.935
+margin_left = -7.75302
+margin_top = -0.275696
+margin_right = 0.0149536
+margin_bottom = -1.47571
+custom_fonts/font = SubResource( 4 )
+text = "Better luck next time"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HomeButton" type="Button" parent="."]
+anchor_left = 0.625
+anchor_top = 0.22
+anchor_right = 0.861
+anchor_bottom = 0.552
+margin_top = -1.52588e-05
+margin_right = 0.335938
+margin_bottom = -0.200012
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+text = "Return Home"
+__meta__ = {
+"_edit_use_anchors_": false
+}

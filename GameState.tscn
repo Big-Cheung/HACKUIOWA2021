@@ -6,15 +6,14 @@
 [ext_resource path="res://GameState.gd" type="Script" id=4]
 [ext_resource path="res://assets/Chain.png" type="Texture" id=5]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 37.6737, 78.696 )
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 13.2639
 height = 104.115
 
-[sub_resource type="Animation" id=1]
-resource_name = "Chain"
+[sub_resource type="Animation" id=3]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Chain:position")
 tracks/0/interp = 1
@@ -69,7 +68,7 @@ position = Vector2( 150, 300 )
 
 [node name="Body" type="CollisionShape2D" parent="Player/Area2D"]
 position = Vector2( -20, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Chain" type="CollisionShape2D" parent="Player/Area2D"]
 position = Vector2( 19, 0 )
@@ -98,6 +97,6 @@ scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 3 )
 
 [node name="Animator" type="AnimationPlayer" parent="Player"]
-anims/Chain = SubResource( 1 )
+anims/Chain = SubResource( 3 )
 
 [node name="RockParticles" parent="." instance=ExtResource( 2 )]
