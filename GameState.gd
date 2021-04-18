@@ -27,7 +27,7 @@ func _process(delta):
 	if not isRunning:
 		return
 	if delay >= 1:
-		Globals.currentFuel -= 3
+		Globals.currentFuel -= 4
 		Globals.points += int(10 * (Globals.multiplier))
 		Globals.multiplier += (10 * (Globals.multiplier))/2000
 		print(Globals.multiplier)
