@@ -17,6 +17,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if not get_parent().running():
+		return
 	position.x = position.x - delta*speed
 	if position.x < -50:
 		queue_free()

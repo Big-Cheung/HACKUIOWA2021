@@ -6,6 +6,8 @@ var newHealthLevel
 var newGrabLevel
 var newRockBalance
 
+signal closed
+
 func _ready():
 	setDefaults();
 	updateDisplay();
@@ -25,6 +27,7 @@ func setDefaults():
 	newGrabLevel = Globals.grabLevel
 	newRockBalance = Globals.rocks
 	updateDisplay()
+
 	#print(str(newFuelLevel) + '\n' + str(newSpeedLevel) + '\n' + str(newHealthLevel) + '\n' + str(newGrabLevel))
 	#print(Globals.currentFuel)
 	#print(Globals.shipSpeed)
@@ -48,6 +51,8 @@ func saveChanges():
 	
 	Globals.rocks = newRockBalance
 	setDefaults()
+	emit_signal("closed")
+	
 	
 
 func updateDisplay():
