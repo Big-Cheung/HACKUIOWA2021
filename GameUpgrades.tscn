@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/Plus-sign.png" type="Texture" id=1]
 [ext_resource path="res://assets/nasalization-rg.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://assets/rock-points.png" type="Texture" id=3]
+[ext_resource path="res://GameUpgrades.gd" type="Script" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.0627451, 0.290196, 0, 0.486275 )
@@ -43,6 +44,7 @@ size = 20
 font_data = ExtResource( 2 )
 
 [node name="Upgrades" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="Menu" type="Panel" parent="."]
 margin_left = 48.2375
