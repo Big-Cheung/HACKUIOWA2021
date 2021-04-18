@@ -17,6 +17,7 @@ var speedLevelCosts = [10, 12, 15, 20, 25, 32, 40, 50, 60, 75, "max"]
 var currentHealth = 5
 var maxHealth = 5
 var healthLevel = 0
+var healthPurchased = 0
 var healthLevelCosts = [20, 40, 60, 80, 100, "max"]
 
 var grabSpeed = 1
