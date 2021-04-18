@@ -27,9 +27,10 @@ func _process(delta):
 	if not isRunning:
 		return
 	if delay >= 1:
-		Globals.currentFuel -= 4
-		Globals.points += 10 * (Globals.multiplier)
+		Globals.currentFuel -= 3
+		Globals.points += int(10 * (Globals.multiplier))
 		Globals.multiplier += (10 * (Globals.multiplier))/2000
+		print(Globals.multiplier)
 		if Globals.currentFuel <= 0:
 			Globals.currentFuel = 0
 			loseGame()
@@ -62,7 +63,7 @@ func collide(areaID,obj,area_shape,self_shape):
 		return
 	if obj.get_parent().getName() == "Meteor":
 		if self_shape == 1:
-			Globals.points += 100 * (Globals.multiplier)
+			Globals.points += int(100 * (Globals.multiplier))
 			Globals.multiplier += (100 * (Globals.multiplier))/2000
 			Globals.rocks += (randi()%5 + 5)
 			Globals.currentFuel = min(Globals.currentFuel +(randi()%5 + 5), Globals.maxFuel)
@@ -70,7 +71,7 @@ func collide(areaID,obj,area_shape,self_shape):
 			$Player/Animator.advance(max(0,2*(0.5-$Player/Animator.current_animation_position)/($Player/Animator.get_playing_speed())))
 		else:
 			Globals.currentHealth -= 1
-			Globals.multiplier = 1
+			Globals.multiplier = 1.0
 			if Globals.currentHealth <= 0:
 				loseGame()
 			obj.get_parent().queue_free()

@@ -1,7 +1,7 @@
 extends Node
 
 var points = 0
-var multiplier = 1
+var multiplier = 1.0
 
 var rocks = 0
 
