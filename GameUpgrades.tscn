@@ -316,11 +316,72 @@ anchor_bottom = 1.0
 custom_fonts/normal_font = SubResource( 5 )
 text = "999"
 
+[node name="ExtraHealth" type="Container" parent="Menu"]
+anchor_left = 0.05
+anchor_top = 0.7
+anchor_right = 0.95
+anchor_bottom = 0.85
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentHealthLabel" type="RichTextLabel" parent="Menu/ExtraHealth"]
+anchor_right = 0.3
+anchor_bottom = 1.0
+custom_fonts/normal_font = SubResource( 3 )
+text = "Current Health:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentHealthValue" type="RichTextLabel" parent="Menu/ExtraHealth"]
+anchor_left = 0.3
+anchor_right = 0.35
+anchor_bottom = 1.0
+custom_fonts/normal_font = SubResource( 3 )
+text = "5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentHealthLabel2" type="RichTextLabel" parent="Menu/ExtraHealth"]
+anchor_left = 0.47
+anchor_right = 0.8
+anchor_bottom = 1.0
+custom_fonts/normal_font = SubResource( 3 )
+text = "Buy Extra Health"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Plus-sign" type="Sprite" parent="Menu/ExtraHealth"]
+position = Vector2( 702.5, 18 )
+scale = Vector2( 0.0427132, 0.0427132 )
+texture = ExtResource( 1 )
+
+[node name="PurchaseHealth" type="Button" parent="Menu/ExtraHealth"]
+anchor_left = 0.811
+anchor_top = 0.04
+anchor_right = 0.847
+anchor_bottom = 0.52
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
+
+[node name="UpgradeCost" type="RichTextLabel" parent="Menu/ExtraHealth"]
+anchor_left = 0.9
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/normal_font = SubResource( 5 )
+text = "100"
+
 [node name="Data" type="Container" parent="Menu"]
 anchor_left = 0.05
-anchor_top = 0.8
+anchor_top = 0.85
 anchor_right = 0.95
-anchor_bottom = 0.9
+anchor_bottom = 0.95
 __meta__ = {
 "_edit_use_anchors_": false
 }
