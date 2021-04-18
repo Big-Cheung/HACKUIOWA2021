@@ -10,6 +10,7 @@ var speed = 200
 # Called when the node enters the scene tree for the first time.
 var meteor = load("res://Meteor.tscn")
 var delay = 1000
+var extending = true
 
 func _ready():
 	rand_seed(OS.get_unix_time())
