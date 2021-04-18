@@ -1,5 +1,7 @@
 extends Node
 
+var asteroids = []
+
 var points = 0
 var multiplier = 1.0
 
