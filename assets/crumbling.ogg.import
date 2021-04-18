@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/crumbling.ogg-59e24ab368532eae79308cb8401a4d08.oggstr"
+
+[deps]
+
+source_file="res://assets/crumbling.ogg"
+dest_files=[ "res://.import/crumbling.ogg-59e24ab368532eae79308cb8401a4d08.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

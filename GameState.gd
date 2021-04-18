@@ -30,7 +30,6 @@ func _process(delta):
 		Globals.currentFuel -= 4
 		Globals.points += int(10 * (Globals.multiplier))
 		Globals.multiplier += (10 * (Globals.multiplier))/2000
-		print(Globals.multiplier)
 		if Globals.currentFuel <= 0:
 			Globals.currentFuel = 0
 			loseGame()
@@ -69,9 +68,11 @@ func collide(areaID,obj,area_shape,self_shape):
 			Globals.currentFuel = min(Globals.currentFuel +(randi()%5 + 5), Globals.maxFuel)
 			obj.get_parent().queue_free()
 			$Player/Animator.advance(max(0,2*(0.5-$Player/Animator.current_animation_position)/($Player/Animator.get_playing_speed())))
+			$Crumble.play()
 		else:
 			Globals.currentHealth -= 1
 			Globals.multiplier = 1.0
+			$Explode.play()
 			if Globals.currentHealth <= 0:
 				loseGame()
 			obj.get_parent().queue_free()
@@ -79,7 +80,6 @@ func collide(areaID,obj,area_shape,self_shape):
 		add_child(particle)
 		particle.position = obj.get_parent().position
 		Globals.asteroidsAlive -= 1
-		print(Globals.asteroids," and ",Globals.asteroidsAlive)
 		if Globals.asteroids.empty() and Globals.asteroidsAlive == 0:
 			winGame()
 
