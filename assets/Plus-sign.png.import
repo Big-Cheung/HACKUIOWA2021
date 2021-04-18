@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rock-oints.png-60bb03b73c59d49caf486870e9cac8f7.stex"
+path="res://.import/Plus-sign.png-30556c15b7fabe52cabaca9fb225397a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/rock-oints.png"
-dest_files=[ "res://.import/rock-oints.png-60bb03b73c59d49caf486870e9cac8f7.stex" ]
+source_file="res://assets/Plus-sign.png"
+dest_files=[ "res://.import/Plus-sign.png-30556c15b7fabe52cabaca9fb225397a.stex" ]
 
 [params]
 
