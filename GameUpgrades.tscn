@@ -17,29 +17,29 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[sub_resource type="DynamicFont" id=5]
-size = 30
-font_data = ExtResource( 2 )
-
 [sub_resource type="DynamicFont" id=2]
 size = 30
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=6]
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=4]
 bg_color = Color( 0.396078, 0.615686, 0.333333, 0 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=5]
 size = 28
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0, 0.380392, 0.00392157, 1 )
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=7]
 size = 20
 font_data = ExtResource( 2 )
 
@@ -72,14 +72,14 @@ __meta__ = {
 [node name="UpgradeLevel" type="RichTextLabel" parent="Menu/Labels"]
 anchor_right = 0.75
 anchor_bottom = 1.0
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "Upgrade Level"
 
 [node name="UpgradeCost" type="RichTextLabel" parent="Menu/Labels"]
 anchor_left = 0.82
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "Cost"
 
 [node name="FuelCapacity" type="Container" parent="Menu"]
@@ -95,7 +95,7 @@ __meta__ = {
 [node name="FuelCapacityLabel" type="RichTextLabel" parent="Menu/FuelCapacity"]
 anchor_right = 0.3
 anchor_bottom = 1.0
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Fuel Capacity"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -125,17 +125,17 @@ anchor_left = 0.811
 anchor_top = 0.04
 anchor_right = 0.847
 anchor_bottom = 0.52
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 6 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
 
 [node name="UpgradeCost" type="RichTextLabel" parent="Menu/FuelCapacity"]
 anchor_left = 0.9
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/normal_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 5 )
 text = "999"
 
 [node name="ShipSpeed" type="Container" parent="Menu"]
@@ -150,7 +150,7 @@ __meta__ = {
 [node name="ShipSpeedLabel" type="RichTextLabel" parent="Menu/ShipSpeed"]
 anchor_right = 0.3
 anchor_bottom = 1.0
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Ship Speed"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -181,17 +181,17 @@ anchor_left = 0.811
 anchor_top = 0.04
 anchor_right = 0.847
 anchor_bottom = 0.52
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 6 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
 
 [node name="UpgradeCost" type="RichTextLabel" parent="Menu/ShipSpeed"]
 anchor_left = 0.9
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/normal_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 5 )
 text = "999"
 
 [node name="ShipDurability" type="Container" parent="Menu"]
@@ -206,7 +206,7 @@ __meta__ = {
 [node name="ShipDurabilityLabel" type="RichTextLabel" parent="Menu/ShipDurability"]
 anchor_right = 0.3
 anchor_bottom = 1.0
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Ship Durability"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -237,17 +237,17 @@ anchor_left = 0.811
 anchor_top = 0.04
 anchor_right = 0.847
 anchor_bottom = 0.52
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 6 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
 
 [node name="UpgradeCost" type="RichTextLabel" parent="Menu/ShipDurability"]
 anchor_left = 0.9
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/normal_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 5 )
 text = "999"
 
 [node name="GrabSpeed" type="Container" parent="Menu"]
@@ -262,7 +262,7 @@ __meta__ = {
 [node name="GrabSpeedLabel" type="RichTextLabel" parent="Menu/GrabSpeed"]
 anchor_right = 0.3
 anchor_bottom = 1.0
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Grab Speed"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -293,17 +293,17 @@ anchor_left = 0.811
 anchor_top = 0.04
 anchor_right = 0.847
 anchor_bottom = 0.52
-custom_styles/hover = SubResource( 6 )
-custom_styles/pressed = SubResource( 6 )
-custom_styles/focus = SubResource( 6 )
-custom_styles/disabled = SubResource( 6 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 4 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 4 )
 
 [node name="UpgradeCost" type="RichTextLabel" parent="Menu/GrabSpeed"]
 anchor_left = 0.9
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/normal_font = SubResource( 7 )
+custom_fonts/normal_font = SubResource( 5 )
 text = "999"
 
 [node name="Data" type="Container" parent="Menu"]
@@ -319,7 +319,7 @@ __meta__ = {
 anchor_left = 0.1
 anchor_right = 0.25
 anchor_bottom = 1.0
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "9999"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -334,12 +334,12 @@ texture = ExtResource( 3 )
 anchor_left = 0.25
 anchor_right = 0.5
 anchor_bottom = 1.0
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 3 )
-custom_styles/normal = SubResource( 3 )
-custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "Cancel"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -349,12 +349,12 @@ __meta__ = {
 anchor_left = 0.55
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 3 )
-custom_styles/disabled = SubResource( 3 )
-custom_styles/normal = SubResource( 3 )
-custom_fonts/font = SubResource( 4 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/disabled = SubResource( 6 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "Save and Close"
 __meta__ = {
 "_edit_use_anchors_": false

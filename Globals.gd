@@ -1,5 +1,8 @@
 extends Node
 
+var points = 0
+var multiplier = 1
+
 var rocks = 500
 
 var currentFuel = 100
