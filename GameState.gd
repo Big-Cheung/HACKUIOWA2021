@@ -56,9 +56,9 @@ func collide(areaID,obj,area_shape,self_shape):
 	if obj.get_parent().getName() == "Meteor":
 		if self_shape == 1:
 			Globals.rocks += (randi()%5 + 5)
-			Globals.currentFuel = min(Globals.currentFuel +(randi()%5 + 5), 100)
+			Globals.currentFuel = min(Globals.currentFuel +(randi()%5 + 5), Globals.maxFuel)
 			obj.get_parent().queue_free()
-			$Player/Animator.advance(max(0,2*(0.5-$Player/Animator.current_animation_position)))
+			$Player/Animator.advance(max(0,2*(0.5-$Player/Animator.current_animation_position)/($Player/Animator.get_playing_speed())))
 		else:
 			Globals.currentHealth -= 1
 			if Globals.currentHealth <= 0:
