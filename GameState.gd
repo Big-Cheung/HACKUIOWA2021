@@ -28,3 +28,9 @@ func _process(delta):
 		$Player.position.y += speed*delta
 	elif Input.is_action_pressed("up") and $Player.position.y > 100:
 		$Player.position.y -= speed*delta
+
+func _input(event):
+	if event.is_action("fire"):
+		$Player/Animator.play("Chain",-1,2)
+		yield(get_node("Player/Animator"),"animation_finished")
+		
