@@ -18,6 +18,7 @@ func _ready():
 	position.x = 1075
 	if Globals.asteroids.size() >= 1:
 		$Name.text = Globals.asteroids[index]
+		Globals.asteroidsAlive += 1
 		Globals.asteroids.remove(index)
 	else:
 		queue_free()
@@ -31,6 +32,7 @@ func _process(delta):
 	position.x = position.x - delta*speed
 	if position.x < -50:
 		Globals.asteroids.push_back(getAsteroidName())
+		Globals.asteroidsAlive -= 1
 		queue_free()
 		
 

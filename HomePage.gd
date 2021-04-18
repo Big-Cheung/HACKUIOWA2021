@@ -17,7 +17,7 @@ func _ready():
 	var http_request = HTTPRequest.new()
 	add_child(http_request)
 	http_request.connect("request_completed", self, "completed")
-	var url = "https://ssd-api.jpl.nasa.gov/cad.api?date-max=%s-%s-%s&dist-max=0.2" % [year,month,day]
+	var url = "https://ssd-api.jpl.nasa.gov/cad.api?date-max=%s-%s-%s&dist-max=40LD" % [year,month,day]
 	http_request.request(url)
 	print(date,day,month,year)
 	$"PlayButton".connect("pressed", self, "displayGame")
@@ -29,12 +29,12 @@ func completed(result, response_code, headers, body):
 	var response = parse_json(body.get_string_from_utf8())
 	for item in response.data:
 		Globals.asteroids.push_back(item[0])
+		Globals.defaultAsteroids.push_back(item[0])
 	print(Globals.asteroids)
 	$Anim.play("Loading")
 
 func displayGame():
-	#do nothing
-	var x = 1+2
+	get_tree().change_scene("res://GameState.tscn")
 	
 func displayInfo():
 	$"InfoScreen".visible = true

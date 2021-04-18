@@ -1,6 +1,8 @@
 extends Node
 
 var asteroids = []
+var defaultAsteroids = []
+var asteroidsAlive = 0
 
 var points = 0
 var multiplier = 1.0
@@ -27,8 +29,9 @@ var grabLevel = 0
 var grabLevelCosts = [20, 40, 60, 80, 100, "max"]
 
 func resetGlobalValues():
+	asteroids = defaultAsteroids
 	points = 0
-	multiplier = 1
+	multiplier = 1.0
 	rocks = 0
 	currentFuel = 100
 	maxFuel = 100

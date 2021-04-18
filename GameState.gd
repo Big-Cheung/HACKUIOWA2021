@@ -78,6 +78,10 @@ func collide(areaID,obj,area_shape,self_shape):
 		var particle = rockparticles.instance()
 		add_child(particle)
 		particle.position = obj.get_parent().position
+		Globals.asteroidsAlive -= 1
+		print(Globals.asteroids," and ",Globals.asteroidsAlive)
+		if Globals.asteroids.empty() and Globals.asteroidsAlive == 0:
+			winGame()
 
 func running():
 	return isRunning
@@ -94,4 +98,7 @@ func closeUpgrades():
 
 
 func loseGame():
-	isRunning = false
+	get_tree().change_scene("res://GameLose.tscn")
+
+func winGame():
+	get_tree().change_scene("res://GameWin.tscn")
