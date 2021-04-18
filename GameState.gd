@@ -10,7 +10,7 @@ var speed = 200
 # Called when the node enters the scene tree for the first time.
 var meteor = load("res://Meteor.tscn")
 var delay = 1000
-var extending = true
+var extending = false
 
 func _ready():
 	randomize()
@@ -46,7 +46,8 @@ func collide(obj):
 	if obj.get_parent().getName() == "Meteor":
 		Globals.rocks += (randi()%5 + 5)
 		Globals.currentFuel = max(Globals.currentFuel +(randi()%5 + 5), 100)
-		obj.queue_free()
+		obj.get_parent().queue_free()
+		print("Added fuel and rocks")
 
 func loseGame():
 	pass
