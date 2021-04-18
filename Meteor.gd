@@ -6,6 +6,8 @@ extends Node2D
 # var b = "text"
 var speed = 300
 
+func getName():
+	return "Meteor"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	rand_seed(OS.get_unix_time())
@@ -18,3 +20,5 @@ func _process(delta):
 	position.x = position.x - delta*speed
 	if position.x < -50:
 		queue_free()
+		
+
